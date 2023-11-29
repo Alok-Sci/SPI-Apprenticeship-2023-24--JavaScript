@@ -79,19 +79,19 @@ Mentor: Rohit Kumar Sir
 
       // function to add two numbers
       function add() {
-        resultField.innerText = parseInt(num1.value) + parseInt(num2.value);
+        resultField.innerHTML = `${num1.value} + ${num2.value} = ${parseInt(num1.value) + parseInt(num2.value)}`;
       }
       // function to subtract two numbers
       function sub() {
-        resultField.innerText = num1.value - num2.value;
+        resultField.innerHTML = `${num1.value} &minus; ${num2.value} = ${num1.value - num2.value}`;
       }
       // function to multiply two numbers
       function mul() {
-        resultField.innerText = num1.value * num2.value;
+        resultField.innerHTML = `${num1.value} * ${num2.value} = ${num1.value * num2.value}`;
       }
       // function to find difference between two numbers
       function diff() {
-        resultField.innerText = num1.value / num2.value;
+        resultField.innerHTML = `${num1.value} &divide; ${num2.value} = ${num1.value / num2.value}`;
       }
 
     //   TODO: create a function to create clear input field functionality
