@@ -34,19 +34,24 @@ Ex: Input: 123 Output: 321
       function findReverse() {
         console.log("inside function");
         const input = document.querySelector("input").value;
-        const inputArr = input.split();
-        // var reverse = [];
-        // for(var i = 0; i<inputArr.length(); i++){
-        //     reverse[i] = inputArr[inputArr.length()-1]; r[0] = i[2]
-        //     console.log("reverse array: ", reverse[i]);
-        // }
-        while(inputArr.length > 0){
-          var rem = inputArr.length-1;
+
+        // break each number and store it in an array
+        const inputArr = input.split('');
+        console.log("array: ", inputArr);
+
+        //create an array of name reverse to store items in reverse order
+        var reverse = [];
+
+        // reverse the number 
+        for(var i = 0; i<inputArr.length; i++){
+            reverse[i] = inputArr[inputArr.length-1-i]; 
+            console.log("reverse array: ", reverse);
         }
+
         console.log(reverse, "reverse value");
         const resultField = document.querySelector("#result");
 
-        resultField.innerText = reverse;
+        resultField.innerText = reverse.join('');
       }
     </script>
   </body>
