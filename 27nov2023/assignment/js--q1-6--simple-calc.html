@@ -1,0 +1,136 @@
+<!-- 
+Q1.6. Create a simple calculator by using if statement in JavaScript.
+Hint: Take two textboxes for getting inputs for calculation and take one textbox to display
+result. Take four buttons for operations like + , - , * and /. It looks like as:-
+-->
+
+<!-- 
+Copyright: Alok Singh 
+Date: 27 november 2023
+Class: 3rd
+Mentor: Rohit Kumar Sir 
+-->
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS task</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: poppins;
+        line-height: 0.8;
+        background-color: rgba(255, 0, 0, 0.1);
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      label {
+        display: grid;
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+      input,
+      button,
+      form,
+      p {
+        border: 2px solid black;
+        padding: 2vmin 3vmin;
+        border-radius: 0.5rem;
+        font-size: 1.1rem;
+      }
+      button {
+        font-weight: 500;
+        font-size: 1.5rem;
+      }
+      form {
+        display: grid;
+        row-gap: 0.2rem;
+        padding: 5vmin 7vmin;
+      }
+      #button-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1em;
+        
+      }
+      /* TODO: make the clear button aquire full width */
+      /* button[value=clear]{
+        width: 100%;
+      } */
+    </style>
+  </head>
+
+  <body>
+    <form action="#">
+      <label for=""
+        >Enter first number
+        <br />
+        <input type="number" id="num1" />
+      </label>
+      <br />
+      <label for=""
+        >Enter Second Number
+        <br />
+        <input type="number" id="num2" />
+      </label>
+      <hr />
+      <label for=""
+        >Result
+        <br />
+        <p id="result-container"></p>
+      </label>
+      <br />
+      <div id="button-container">
+        <button type="button" onclick="add()">+</button>
+        <button type="button" onclick="sub()">&minus;</button>
+        <button type="button" onclick="mul()">x</button>
+        <button type="button" onclick="diff()">&divide;</button>
+        <!-- <button type="button" value="clear">Clear</button> -->
+        
+      </div>
+    </form>
+
+    <script>
+      // target first number input field
+      const num1 = document.querySelector("#num1");
+      console.log("~num1 executed~");
+
+      // target second number input field
+      const num2 = document.querySelector("#num2");
+      console.log("~num2 executed~");
+
+      // target result display field
+      const resultField = document.querySelector("#result-container");
+      console.log("~resultField executed~");
+
+      // function to add two numbers
+      function add() {
+        resultField.innerText = parseInt(num1.value) + parseInt(num2.value);
+      }
+      // function to subtract two numbers
+      function sub() {
+        resultField.innerText = num1.value - num2.value;
+      }
+      // function to multiply two numbers
+      function mul() {
+        resultField.innerText = num1.value * num2.value;
+      }
+      // function to find difference between two numbers
+      function diff() {
+        resultField.innerText = num1.value / num2.value;
+      }
+
+    //   TODO: create a function to create clear input field functionality
+    //   function clear(){}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!-- 
+Q1.3 Create a distance convertor in HTML that will convert meters in K.Ms.
+Hint: Take an input from textbox and print result in another textbox.
+Formula: 1KM=1000 M
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Task 1.3</title>
+    <link rel="stylesheet" href="/common-style.css" />
+    <style>
+      select:focus option:first-child {
+        display: none;
+      }
+
+      label * {
+        margin-block: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#">
+      <label for="unit-converter"
+        >Convert distance measurement units<br />
+        <select name="unit-converter" id="convertTo">
+          <option value="#">Convert to</option>
+          <option value="km">Metre to KM</option>
+          <option value="mtr">KM to Metre</option>
+        </select>
+        <input
+          type="number"
+          name="unit-converter"
+          placeholder="Enter a value.."
+          id=""
+        />
+      </label>
+      <label for="result"
+        >Result
+        <p id="result" name="result"></p>
+      </label>
+      <button type="button" value="convert">Convert</button>
+    </form>
+    <script>
+      // target button
+      const convertBtn = document.querySelector("button");
+      convertBtn.addEventListener("click", function () {
+        // target and get the selected choice
+        const selectedChoice = document.querySelector("#convertTo").value;
+
+        // target input field and get the value
+        const inputValue = document.querySelector("input").value;
+
+        // target result field
+        const resultField = document.querySelector('#result');
+
+        // evaluate choice
+        if(selectedChoice == 'km'){
+            resultField.innerText = inputValue + "Mtr(s) = " + inputValue/1000 + "KM(s)";
+        }
+        else{
+            resultField.innerText = inputValue + "KM(s) = " + inputValue*1000 + "Mtr(s)";
+        }
+      });
+    </script>
+  </body>
+</html>

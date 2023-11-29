@@ -1,0 +1,71 @@
+<!-- 
+Q1.7 WAP to print the following pattern by using JS:
+
+[a] 
+* 
+* * 
+* * * 
+* * * *
+* * * * *
+
+[b] 
+* * * * *
+* * * *
+* * *
+* *
+*
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task 1.1</title>
+    <link rel="stylesheet" href="/common-style.css">
+    <style>
+        html{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 2rem;
+            font-family: poppins;
+        }
+        main{
+            display: flex;
+        }
+        .container1, .container2{
+            box-sizing: border-box;
+            border: 2px solid black;
+            border-radius: 2px;
+            /* padding: 2rem; */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container1"></div>
+        <div class="container2"></div>
+    </main>
+    <script>
+        const line=5;
+        
+        for(var row = 0; row<=line; row++){
+            for(var col = line; col>row; col--){
+                console.log("first loop", col);
+                document.querySelector('.container1').innerHTML += "* &nbsp;";
+            }
+            for(var col = 0; col<row; col++){
+                console.log("second loop", col);
+                document.querySelector('.container2').innerHTML += "* &nbsp;";
+            }
+            document.querySelector('.container1').innerHTML += "<br>";
+            document.querySelector('.container2').innerHTML += "<br>";
+            console.log("End of for loop");
+        }
+    </script>
+</body>
+</html>

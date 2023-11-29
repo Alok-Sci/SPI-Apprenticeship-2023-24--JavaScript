@@ -1,0 +1,53 @@
+<!-- 
+Q1.5 Create an HTML page to find the reverse of a number.
+Hint: Take an input from textbox and print result in another textbox on button’s click.
+Ex: Input: 123 Output: 321 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Task 1.5</title>
+    <link rel="stylesheet" href="/common-style.css" />
+  </head>
+  <body>
+    <form action="#">
+      <label for="">
+        Enter a number
+        <br />
+        <input type="number" name="" id="" />
+      </label>
+      <br />
+      <label for="">
+        Result
+        <p id="result"></p>
+      </label>
+      <br />
+      <button type="button" onclick="findReverse()">Find Reverse</button>
+    </form>
+    <script>
+
+      // Algorithm
+      // 1. input field target, value nikalo, ek variable mein store karo
+      function findReverse() {
+        console.log("inside function");
+        const input = document.querySelector("input").value;
+        const inputArr = input.split();
+        // var reverse = [];
+        // for(var i = 0; i<inputArr.length(); i++){
+        //     reverse[i] = inputArr[inputArr.length()-1]; r[0] = i[2]
+        //     console.log("reverse array: ", reverse[i]);
+        // }
+        while(inputArr.length > 0){
+          var rem = inputArr.length-1;
+        }
+        console.log(reverse, "reverse value");
+        const resultField = document.querySelector("#result");
+
+        resultField.innerText = reverse;
+      }
+    </script>
+  </body>
+</html>

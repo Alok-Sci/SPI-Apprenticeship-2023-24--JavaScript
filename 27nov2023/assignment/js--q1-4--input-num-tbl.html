@@ -1,0 +1,109 @@
+<!-- 
+Q1.4 WAP to print the table of a given number.
+Hint: Take an input from textbox and print result in textarea.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Task 1.4</title>
+    <link rel="stylesheet" href="/common-style.css" />
+    <style>
+      main {
+        display: grid;
+        /* grid-template-rows: repeat(2, 1fr); */
+        row-gap: .1rem;
+      }
+      form {
+        border: none;
+      }
+      table {
+        display: grid;
+        padding: 0;
+      }
+      tr {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        padding: 1rem 1.2rem;
+        border-bottom: 2px solid black;
+      }
+      tr:last-child {
+        border: none;
+      }
+      tr:nth-child(even) {
+        background-color: rgba(255, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form action="#">
+        <label for="table-input"> Enter a number </label>
+        <input type="number" name="table-input" placeholder="e.g. 2" />
+        <button type="button" onclick="printTable()">Print Table</button>
+      </form>
+    </main>
+
+    <script>
+      // target the input value
+      // target the print table button
+
+      function printTable() {
+
+        console.log("inside printTable()");
+
+        // target and get input value
+        const input = document.querySelector("input").value;
+        console.log("input value: ", input);
+
+        // target main tag
+        const main = document.querySelector("main");
+
+        // remove pre-existing table 
+        const existingTable = document.querySelector('table');
+        if(existingTable){
+          existingTable.remove();
+          console.log("Pre-exisiting Table deleted");
+        }
+
+        // create a <table>
+        const table = document.createElement("table");
+        console.log("table value: ", table);
+
+        // loop to find table
+        for (var i = 1; i <= 10; i++) {
+          // create a <tr>
+          const tableRow = document.createElement("tr");
+
+          // create and append each <td> separately
+          const td1 = document.createElement("td");
+          td1.innerText = input;
+          tableRow.appendChild(td1);
+
+          const td2 = document.createElement("td");
+          td2.innerText = " X ";
+          tableRow.appendChild(td2);
+
+          const td3 = document.createElement("td");
+          td3.innerText = i;
+          tableRow.appendChild(td3);
+
+          const td4 = document.createElement("td");
+          td4.innerText = " = ";
+          tableRow.appendChild(td4);
+
+          const td5 = document.createElement("td");
+          td5.innerText = input * i;
+          tableRow.appendChild(td5);
+
+          // append the table row into teh table
+          table.appendChild(tableRow);
+        }
+        // append the table into the main tag
+        main.appendChild(table);
+      }
+    </script>
+  </body>
+</html>
