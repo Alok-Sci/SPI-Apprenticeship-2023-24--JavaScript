@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/common-style.css" />
+    <title>Form validation: Pattern</title>
+    <style>
+        form, label{
+            row-gap: 1rem;
+        }
+        label{
+            display: grid;
+        }
+
+        input:focus{
+          outline: none;
+        }
+    </style>
+  </head>
+  <body>
+      <form action="#">
+        <h1>Form Validation: Length Check</h1>
+      <label for=""> 
+        <input type="password" placeholder="Enter value" onkeyup="patternCheck()"/><span></span> </label>
+      <button type="button" >Check Password Strength</button>
+    </form>
+
+    <script>
+      function patternCheck() {
+        const input = document.querySelector("input");
+        const span = document.querySelector("span");
+
+        
+        if (input.value.length <= 3) {
+          input.style.border = "2px solid red";
+          span.innerText = "Weak Password";
+          span.style.color = "Red";
+        } 
+        
+        else if (input.value.length > 3 && input.value.length <= 6) {
+          input.style.border = "2px solid yellow";
+          span.innerText = "Medium Password";
+          span.style.color = "Yellow";
+        } 
+        
+        else {
+          input.style.border = "2px solid green";
+          span.innerText = "Strong Password";
+          span.style.color = "green";
+        }
+      }
+    </script>
+  </body>
+</html>
