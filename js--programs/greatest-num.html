@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Odd Even in JS</title>
+        <script>
+            // find the greatest among two numbers
+            function greatestNumAmongTwo() {
+                const first = document.getElementById('first').value;
+                alert(first);
+                const second = document.getElementById('second').value;
+                alert(second);
+                const outputBox = document.getElementById('output');
+
+                if (first > second) {
+                    outputBox.value = first + " is greater";
+                } else {
+                    outputBox.value = second + " is greater";
+                }
+            }
+
+            // find the greatest among three numbers
+            function greatestNumAmongThree(){
+                alert()
+                const first = document.getElementById('first').value;
+                // alert(first);
+                const second = document.getElementById('second').value;
+                // alert(second);
+                const third = document.getElementById('third').value;
+                // alert(third);
+                
+                // display in input element having id=outputBox 
+                const outputBox = document.getElementById('output');
+
+                if(first > second && first >third){
+                    outputBox.value = first + " is greatest";
+                }
+                else if (second > first && second >third){
+                    outputBox.value = second + " is greatest";
+                }
+                else {
+                    outputBox.value = third + " is greatest";
+                }
+            }
+            
+        </script>
+
+    </head>
+
+    <body>
+        <!-- ---number input-----  -->
+        <label for="">Enter a number</label>
+        <input type="number"
+               placeholder="first number"
+               id="num">
+        <br>
+        
+        <!-- ----button-----  -->
+        <input type="button"
+               value="Check"
+               onclick="greatestNumAmongThree()">
+        <br>
+
+        <!-- result box  -->
+        <label for="">Result</label>
+        <input type="text"
+               id="output">
+
+    </body>
+
+</html>

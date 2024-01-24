@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="/common-style.css" />
+    <style>
+      label {
+        display: grid;
+      }
+      form {
+        row-gap: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <label for="" class="container"
+        >Name<input type="text" name="" id="name"
+      /></label>
+      <label for="" class="container"
+        >Mobile No.<input type="number" name="" id="mobile"
+      /></label>
+      <label for="" class="container"
+        >Email<input type="email" name="" id="email"
+      /></label>
+      <label for="" class="container"
+        >Password<input type="password" name="" id="password"
+      /></label>
+      <!-- <label for=""
+        >Result
+        <p id="result"></p
+      ></label> -->
+      <button type="button" onclick="required()">Check</button>
+    </form>
+
+    <script>
+      function required() {
+        const container = document.querySelector(".container");
+
+        const name = document.querySelector("#name");
+        // const nameValue = document.querySelector("#name").value;
+        console.log(name.value);
+
+        const mobile = document.querySelector("#mobile");
+        const mobileValue = document.querySelector("#mobile").value;
+        console.log(mobile.value);
+
+        const email = document.querySelector("#email");
+        const emailValue = document.querySelector("#email").value;
+        console.log(email.value);
+
+        const password = document.querySelector("#password");
+        const passwordValue = document.querySelector("#password").value;
+        console.log(password.value);
+        // const resultField = document.querySelector('#result');
+
+        if (name.value == "") {
+          console.log("name is empty!");
+          errorStyle(name);
+        } else if (mobile.value == "") {
+          console.log("mobile is empty!");
+          errorStyle(mobile);
+          successStyle(name);
+        } else if (email.value == "") {
+          console.log("email is empty!");
+          errorStyle(email);
+          successStyle(name);
+          successStyle(mobile);
+        } else if (password.value == "") {
+          console.log("password is empty!");
+          errorStyle(password);
+          successStyle(name);
+          successStyle(mobile);
+          successStyle(email);
+        } else {
+          alert("Code ran successfully!!");
+        }
+      }
+
+      function errorStyle(element) {
+        element.style.border = "2px solid red";
+        element.style.borderRadius = ".5rem";
+        element.style.color = "red";
+
+        element.setAttribute("placeholder", "Required!!"); //add attribute placeholder
+        element.classList.add("red-placeholder"); // add red-placeholder class
+        element.classList.remove("green-placeholder"); // remove existing green-placeholder class
+      } 
+
+      function successStyle(element) {
+        element.style.border = "2px solid black";
+        element.style.borderRadius = ".5rem";
+        element.style.color = "black";
+
+        element.setAttribute("placeholder", "Enter value..");
+        element.classList.add("placeholder-text"); // remove existing red-placeholder class
+        element.classList.add("green-placeholder"); //add a new class for placeholder color
+        element.classList.remove("red-placeholder"); // remove existing red-placeholder class
+      }
+    </script>
+  </body>
+</html>

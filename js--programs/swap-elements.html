@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap elements using JS</title>
+    <script>
+        function swap(){
+            var element1 = document.getElementById('el1').innerHTML;
+            alert(element1);
+            var element2 = document.getElementById('el2').innerHTML;
+            alert(element2);
+            const confirm = window.confirm("You are going to swap heading1 and heading2!!");
+            alert(confirm);
+            var temp;
+
+            if(confirm){
+                alert("inside if");
+                document.getElementById('el1') = element2;
+                alert(document.getElementById('el1'));
+                document.getElementById('el2') = element1;
+                document.createElement('Swapped');
+            }
+            else {
+                window.alert('Swap is canceled!');
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <h1 id="el1">This is heading</h1>
+    <h2 id="el2">This is subheading</h2>
+    <button id="confirm" onclick="swap()">Swap</button>
+    
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Task 2.4: Popup</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body{
+        overflow: hidden;
+        position: relative;
+      }
+
+      .main-content, main{
+        display: grid;
+      }
+
+      main{
+        min-width: 80vw;
+        max-width: min-content;
+        min-height: min-content;
+        max-height: fit-content;
+        justify-content: center;
+      }
+      
+      .popup-wrapper{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+
+        background-color: #00000066;
+        backdrop-filter: blur(2px);
+      }
+
+      #popup{
+        min-width: 50vw;
+        max-width: min-content;
+        justify-content: center;
+        align-items: center;
+
+        background-color: white;
+
+
+        text-align: center;
+        border: 2px solid #000;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        transition-duration: 0.5s;
+      }
+
+      #popup *:not([type='button']){
+        border: none;
+      }
+      .main-content p{
+        border: none;
+        padding: 1.2rem 0px;
+      }
+      p{
+        line-height: 1.5;
+        letter-spacing: 2px;
+      }
+      h3{
+        line-height: 1.5;
+      }
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="main-content">
+        <h1>Open popup at your own risk!!</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima deserunt dolorem cum excepturi numquam inventore, assumenda repellendus nemo, repellat, officiis nisi! Aliquam modi animi impedit. Non voluptas velit, nam nisi iure consectetur, deserunt odio doloribus explicabo quis quo nemo possimus molestias fuga. Iusto ea ut optio reiciendis enim voluptatem deserunt. Eos unde distinctio dignissimos error ducimus!</div>
+        <button onclick="openPopup()">Open Popup</button>
+      </div>
+      <div class="popup-wrapper" style="display: none">
+        <div id="popup" class="glassmorphism" >
+          <h1>This is a Popup!</h1>
+          <div>
+            <p>
+              To view detailed information about this text, please click on the "Open Popup" button. This text is currently visible to you because you have clicked on the aforementioned button.
+            </p>
+            <h3>
+              How dare you open the Popup? Koi kuch bolega to kuch bhi kar doge?
+              Close the popup right now!
+            </h3>
+          </div>
+          <button type="button" onclick="closePopup()">Close Popup</button>
+        </div>
+      </div>
+    </main>
+
+    <script>
+
+      let openPopupBtn = document.querySelector('button[onclick="openPopup()"]');
+      console.log('bodyChild executed');
+      let closePopupBtn = document.querySelector('button[onclick="closePopup()"]');
+      console.log('bodyChild executed');
+      let popup = document.querySelector('.popup-wrapper');
+      console.log('bodyChild executed');
+      
+      function openPopup(){
+        console.log('----start of openPopup----');
+        
+        popup.style.display = 'flex';
+
+        
+        console.log('----end of openPopup----');
+        
+      }
+      function closePopup(){
+        console.log('----start of closePopup----');
+        
+        popup.style.display = 'none';
+        
+        console.log('----end of closePopup----');
+      }
+    </script>
+  </body>
+</html>

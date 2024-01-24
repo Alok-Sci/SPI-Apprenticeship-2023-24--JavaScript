@@ -1,0 +1,94 @@
+<!-- 
+Q1.7 WAP to print the following pattern by using JS:
+
+[a] 
+* 
+* * 
+* * * 
+* * * *
+* * * * *
+
+[b] 
+* * * * *
+* * * *
+* * *
+* *
+*
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Task 1.1</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      main {
+        display: flex;
+        border: none;
+      }
+      form{
+        row-gap: 1.5rem;
+      }
+      table {
+        grid-template-columns: 0.8fr 0.8fr;
+        row-gap: 1rem;
+        padding: 0;
+      }
+
+      table tr {
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+        min-height: 5rem;
+      }
+      .container1,
+      .container2 {
+        box-sizing: border-box;
+        font-size: 2rem;
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form action="">
+        <h1>Print Star Patterns</h1>
+        <label for="">
+          Enter Number of Lines for pattern
+          <input type="text" placeholder="Enter value.." />
+        </label>
+        <button type="button" onclick="printStars()">Print Pattern</button>
+        <table>
+          <tr>
+            <td class="container1"></td>
+            <td class="container2"></td>
+          </tr>
+        </table>
+      </form>
+    </main>
+    <script>
+      function printStars() {
+        const line = document.querySelector("input").value;
+        document.querySelector(".container1").innerHTML = "";
+        document.querySelector(".container2").innerHTML = "";
+
+        for (var row = 0; row <= line; row++) {
+          console.log("--for loop executed--");
+          for (var col = line; col > row; col--) {
+            console.log("first loop", col);
+            document.querySelector(".container1").innerHTML += "* &nbsp;";
+          }
+          for (var col = 0; col < row; col++) {
+            console.log("second loop", col);
+            document.querySelector(".container2").innerHTML += "* &nbsp;";
+          }
+          document.querySelector(".container1").innerHTML += "<br>";
+          document.querySelector(".container2").innerHTML += "<br>";
+          console.log("End of for loop");
+        }
+      }
+    </script>
+  </body>
+</html>

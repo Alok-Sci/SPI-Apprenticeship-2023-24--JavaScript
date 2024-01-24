@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Task 2.3: Image Slider</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="slider.css" />
+  </head>
+  <body onload="slide()">
+    <main>
+      <div class="slider">
+        <img src="" alt="" />
+      </div>
+    </main>
+    <script>
+      // use array of objects ; each object has a name and img keys
+      var images = [
+        {
+          name: "landscape",
+          imgUrl: "https://wallpaperaccess.com/full/90977.jpg",
+        },
+        {
+          name: "dock side mountains sky landscape",
+          imgUrl:
+            "https://hdqwalls.com/download/dock-side-mountains-sky-landscape-gs-1920x1080.jpg",
+        },
+        {
+          name: "mountains and lake landscape",
+          imgUrl:
+            "https://th.bing.com/th/id/R.ef6b1c102f8c9d91c6d079844f701255?rik=J%2bYLlKfMffoaiw&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f04%2fDesktop-landscape-wallpaper-HD-1.jpg&ehk=HxXkxFcxONLWomK82z%2fmLxWJIzu%2fX93piKlSHKfiKZA%3d&risl=&pid=ImgRaw&r=0",
+        },
+        {
+          name: "pink sky landscape",
+          imgUrl: "https://cdn.wallpapersafari.com/23/39/Wy2uph.jpg",
+        },
+        {
+          name: "mountains and lake",
+          imgUrl:
+            "https://th.bing.com/th/id/R.0332d4827e57be9baa7686312a3c6fea?rik=dsHuvOLQymF7%2bw&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f3%2f9%2f6%2f39304.jpg&ehk=HePwPuQUqKsxzCfJa%2btrHu%2bAPPttVDlbeZ1GtrLNEwY%3d&risl=&pid=ImgRaw&r=0",
+        },
+      ];
+
+      //   initialize iterator
+      var i = 0;
+
+      //   function to slide the images
+      function slide() {
+        console.log("--start of slide--");
+
+        let slider = document.querySelector(".slider");
+        if (slider) {
+          
+          let sliderImg = document.querySelector('.slider > img');
+          if (sliderImg) {
+            sliderImg.setAttribute("alt", images[i].name);
+            sliderImg.setAttribute("src", images[i].imgUrl);
+
+            slider.innerText = i + 1;
+
+            // increment iterator
+            i++;
+
+            // if iterator's value is equal to the array length then reset the iterator's value to 0(zero)
+            if (i == images.length) {
+              i = 0;
+            }
+
+            setTimeout(slide, 3000); //call slide() function every 3 seconds
+
+            console.log("--end of if(slideImg)--");
+          } else {
+            console.log("slideImg not found----");
+          }
+          console.log("--end of if(slide)--");
+        } else {
+          console.log("slide not found----");
+        }
+      }
+    </script>
+  </body>
+</html>

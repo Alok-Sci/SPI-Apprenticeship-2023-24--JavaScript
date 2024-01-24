@@ -1,0 +1,49 @@
+<!-- 
+Q2.1. Create an HTML page to get and set the content in/ from a div tag by using JavaScript.
+Hint: Read content of div and write some content in div by using JS. Take two buttons one is
+for reading the content of div and another button is for writing the content in div tag. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Task 2.1</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        form{
+            display: flex;
+        }
+    </style>
+  </head>
+  <body>
+    <form action="#">
+      <label for="get" id="get">
+        <input type="text" name="get" id="" placeholder="Enter value.."/>
+        <button type="button" onclick="getContent()">Get Content</button>
+      </label>
+      <label for="set" id="set">
+        <input type="text" name="set" id="" placeholder="Enter value.."/>
+        <button type="button" onclick="setContent()">Set Content</button>
+      </label>
+    </form>
+    <script>
+      let content;
+
+      function getContent() {
+        console.log('inside getContent');
+        let getInput = document.querySelector("#get input");
+        content = getInput.value;
+        return content;
+      }
+      console.log("value of content: ", content);
+
+      function setContent() {
+        console.log('inside setContent');
+        let setInput = document.querySelector("#set input");
+        setInput.value = content;
+      }
+    </script>
+  </body>
+</html>

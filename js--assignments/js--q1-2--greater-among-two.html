@@ -1,0 +1,44 @@
+<!--
+Q1.2. WAP to find the higher number from 2 numbers by using prompt and alert box.
+Hint: By using prompt box enter two numbers then print higher number by using alert box. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Task 1.2</title>
+  </head>
+  <body>
+    <script>
+      // Algorithm
+      // 1. take input for num1 and store it in a variable
+      const num1 = prompt("Enter First Number: ");
+      console.log("value of num1: ", num1);
+
+      // 2. take input for num2 and store it in a variable
+      const num2 = prompt("Enter Second Number: ");
+      console.log("value of num2: ", num2);
+
+      // 3. do the calculation (find the greater value among the two)
+      // using ternary operator
+      const resultUsingTernary =
+        parseInt(num1) > parseInt(num2)
+          ? `First number ${num1} is Greater!!`
+          : `Second number ${num2} is Greater!!`;
+      console.log("value of greatest number: ", resultUsingTernary);
+
+      // 4. display the result
+      //using ternary
+      alert(resultUsingTernary);
+
+      // using if-else operator
+      //   if (num1 > num2) {
+      //     alert(num1, " is Greater!!");
+      //   } else {
+      //     alert(num2, " is Greater!!");
+      //   }
+    </script>
+  </body>
+</html>

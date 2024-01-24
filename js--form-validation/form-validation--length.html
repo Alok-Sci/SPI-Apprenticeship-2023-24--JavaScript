@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form validation: Length</title>
+    <link rel="stylesheet" href="form.css" />
+    <style>
+      form,
+      label {
+        display: grid;
+        row-gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#">
+      <h1>Form Validation: Length Check</h1>
+      <label for="mobile" id="">
+        <input type="number" name="mobile" placeholder="Enter value.." />
+      </label>
+      <button type="button" onclick="lengthCheck()">Check</button>
+    </form>
+    <script>
+      function lengthCheck() {
+        console.log("inside lengthCheck");
+        const inputValue = document.querySelector("input").value;
+        const label = document.querySelector("label");
+
+        // if (!span) {
+          const span = document.createElement("span");
+        // } else {
+        //   span.remove();
+        // }
+
+        console.log(inputValue);
+
+        if (inputValue.length == 10) {
+          span.innerText = "Success";
+          label.appendChild(span);
+        } else {
+          span.innerText = "Minimum length should be 10 Characters";
+          label.appendChild(span);
+        }
+      }
+    </script>
+  </body>
+</html>

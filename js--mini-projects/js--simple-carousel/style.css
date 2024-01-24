@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+}
+
+main{
+    width: clamp(400px, 50%, 600px);
+    height: 60%;
+}
+
+.carousel{
+    position: relative;
+    height: 100%;
+}
+.carousel-track{
+    display: flex;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+    /* overflow: hidden; */
+}
+.carousel-item{
+    width: 100%;
+    height: 100%;
+    flex: 0 0 auto;
+    background-color: red;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.prev{
+    left: 10px;
+}
+.next{
+    right: 10px;
+}

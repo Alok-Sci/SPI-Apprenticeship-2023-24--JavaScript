@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table in HTML & JS</title>
+    <script>
+
+        const button = document.querySelector('button');
+
+        // add event listener on button 
+        button.addEventListener('click', function (){
+            const value1 = document.querySelector('#value1').value;
+            const value2 = document.querySelector('#value2').value;
+            const table = document.createElement('table');
+            console.log("this is value1: ", value1, + "this is value2: ", value2, "this is table: ", table);
+
+
+            for(let i = 1; i<10; i++){
+                const tableRow = document.createElement('tr');
+                const tableData = document.createElement('td');
+                tableData.innerHTML = value1 + value2;
+                tableRow.appendChild(tableData);
+                table.appendChild(tableRow);
+                console.log("end of For loop");
+            }
+            document.body.appendChild(table);
+            console.log("End of function");
+        })
+    </script>
+</head>
+<body>
+    <label for="value1">First number</label>
+    <input type="number" id="value1" name="value1">
+    <label for="value1">Second number</label>
+    <input type="number" id="value2" name="value2">
+    <button type="submit">Find the Table</button>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider using JS</title>
+    <link rel="stylesheet" href="slider.css">
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        border-radius: 5vmin;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      
+    </style>
+  </head>
+  <body onload="slide()">
+    <div id="slider">
+      <img src="" alt="" />
+    </div>
+
+    <script>
+      var img = ["abhishek.png", "aish.png", "alok.png", "dayanand.png"];
+      console.log("img executed: ", img);
+      var i = 0;
+      console.log("i executed: ", i);
+
+      function slide() {
+        console.log("Slide executed");
+        // var div = document.querySelector("#slider");
+        var imageEl = document.querySelector("#slider img");
+        imageEl.style.content = `url(images/${img[i]})`;
+
+        console.log("div executed");
+        i++;
+
+        // if iterator = array length then do iterator = 0
+        if (img.length == i) {
+          i = 0;
+        }
+
+        setTimeout("slide()", 2000); //call slide() in every 2 second
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation: Length Check</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      form {
+        width: 50%;
+        row-gap: 1rem;
+      }
+      div{
+        display: flex;
+        justify-content: space-between;
+        line-height: .1;
+        margin-block: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#">
+      <label for="" id="name">
+        <div>
+          <h3>Name</h3> <span class="alert"></span>
+        </div>
+        <input type="text" name=""  placeholder="Enter value..." />
+      </label>
+      <label for="" id="mobile">
+        Mobile <span class="alert"></span>
+        <input type="number" name="" placeholder="Enter value..." />
+      </label>
+      <label for="" id="email">
+        Email <span class="alert"></span>
+        <input type="text" name="" placeholder="Enter value..." />
+      </label>
+      <label for="" id="password">
+        Password <span class="alert"></span>
+        <input type="password" name=""  />
+      </label>
+      <br />
+      <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+      function submitForm() {
+        const name = document.querySelector("#name > input");
+        const mobile = document.querySelector("#mobile > input");
+        const email = document.querySelector("#email > input");
+        const password = document.querySelector("#password > input");
+
+        if (name.value.length < 3 || name.value.length > 10) {
+          // name.value = "";
+          // name.setAttribute(
+          //   "placeholder",
+          //   "Name should be 3-10 character long!"
+          // );
+          document.querySelector("#name > div > span").innerText = "Name should be 3-10 character long!";
+          document.querySelector("#name > div > span").style.color = "red";
+          name.style.border = "2px solid red";
+        } else {
+          name.style.border = "2px solid black";
+        }
+        
+        if (mobile.value.length != 10) {
+          mobile.value = "";
+          mobile.setAttribute(
+            "placeholder",
+            "Mobile no. should be 10 numbers long!"
+            );
+            document.querySelector("#name > span").innerText = "Mobile no. should be 10 numbers long!";
+            mobile.style.border = "2px solid red";
+        } else {
+          mobile.style.border = "2px solid black";
+        }
+
+        if ((email.value = "")) {
+          email.value = "";
+          email.setAttribute("placeholder", "Email should not be empty!");
+        } else {
+          email.style.border = "2px solid black";
+        }
+
+        if (password.value.length <= 3) {
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!-- WAP to print the sum of two numbers -->
+
+<html>
+
+    <head>
+        <title>Sum of two numbers</title>
+        <script>
+            function hello(){
+                window.alert("hello");
+            }
+            function printObj(){
+                const a = document.getElementById("first");
+                window.alert(a);
+            }
+            function printValue(){
+                const a = document.getElementById("first").value;
+                window.alert(a);
+            }
+            function addOverloaded(){
+                const first = document.querySelector('#first');
+                const second = document.querySelector('#second');
+                window.alert("Sum is: " + (first.value+second.value));
+            }
+            function addOverwrite(){
+                const first = document.querySelector('#first');
+                const second = document.querySelector('#second');
+                const result = parseInt(first.value)+parseInt(second.value);
+                window.alert("Sum is: " + result);
+            }
+            function addInAlert(){
+                const first = document.querySelector('#first');
+                const second = document.querySelector('#second');
+                const result = parseInt(first.value)+parseInt(second.value);
+                window.write("Sum is: " + result);
+            }
+            function addInDocument(){
+                const first = document.querySelector('#first');
+                const second = document.querySelector('#second');
+                const result = parseInt(first.value)+parseInt(second.value);
+
+                const resultBox = document.getElementById('result');
+                resultBox.innerHTML(result);
+            }
+            function addInInput(){
+                // get inputs 
+                const first = document.querySelector('#first');
+                const second = document.querySelector('#second');
+                // convert the values of "first" and "second" into integer 
+                const result = parseInt(first.value)+parseInt(second.value);
+                // display the result in input box having id "result"
+                const resultBox = document.getElementById('output');
+                resultBox.value = result;
+            }
+            function subtract(){
+                const first = document.querySelector('#first');
+                const second = document.querySelector('#second');
+                let output = first.value-second.value;
+                window.alert("Sum is: " + output);
+                
+                // const outputBox = document.querySelector('#output');
+                // outputBox.textContent = first-second;
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <!-- -------------input----------------- -->
+        <label for="">Enter first no.</label>
+        <input type="number" placeholder="Enter a number" id="first">
+        <br>
+        <label for="">Enter second no.</label>
+        <input type="number" placeholder="Enter a number" id="second">
+        <br>
+        <!-- ---------button----------- -->
+        <!-- <input type="button" value="Press me" onclick="hello()"> -->
+        <!-- <input type="button" value="Print Value" onclick="printObj()"> -->
+        <!-- <input type="button" value="Print Value" onclick="printValue()"> -->
+        <!-- <input type="button" value="Add" onclick="add()"> -->
+        <!-- <input type="button" value="Subtract" onclick="subtract()"> -->
+        <input type="button" value="Add" onclick="addInInput()">
+
+        
+        <!-- <input type="button" value="ADD" onclick="function() {window.alert('Your sum is ${#first}+${#second}')}"> -->
+        
+        <br>
+        <!-- ---------------result-------------- -->
+        <!-- <p id="result"></p> -->
+        <!-- result in input box  -->
+        <input type="text" id="output"> 
+    </body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener in Js</title>
+</head>
+<body>
+    <button id="toggle" style="background-color: red;">Cick me to change the color to green</button>
+    <button id="toggle2" style="background-color: red;">Cick me to change the color to green</button>
+    <button id="toggle3" style="background-color: red;">Cick me to change the color to green</button>
+</body>
+<script>
+    const toggle = document.querySelector('#toggle');
+    toggle.addEventListener('click', function (){
+        const toggleBgColor = toggle.style.backgroundColor;
+        toggle.style.backgroundColor = (toggleBgColor == 'red') ? 'green' : 'red';
+    })
+    const toggle2 = document.querySelector('#toggle2');
+    toggle2.addEventListener('mouseover', function (){
+        const toggle2BgColor = toggle2.style.backgroundColor;
+        toggle2.style.backgroundColor = (toggle2BgColor == 'red') ? 'green' : 'red';
+        
+    })
+    const toggle3 = document.querySelector('#toggle3');
+    toggle3.addEventListener('mouseover', function (){
+        const toggle3BgColor = toggle3.style.backgroundColor;
+        toggle3.style.backgroundColor = (toggle3BgColor == 'red') ? 'green' : 'red';
+    })
+</script>
+</html>

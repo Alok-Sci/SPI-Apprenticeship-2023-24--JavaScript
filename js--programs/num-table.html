@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table using JS</title>
+    <script>
+        // find the table using for loop
+        function numTable(){
+            
+            alert("Inside numTable"); // check if the function is being called
+            const num = document.getElementById('num').value;  //store the value of element having id = num in  variable num 
+            alert(num); // check if the num variable has a value 
+
+            for(let i = 1; i<=10; i++){
+                // multiply the input number with the i iterator 
+                document.write(num*i);
+                // add a line break 
+                document.write("<br>");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3 for="">Input</h3>
+    <label for="">Input a number</label>
+    <input type="number" name="" id="num">
+    <br>
+
+    <input type="button" value="Check the table" onclick="numTable()">
+    <br>
+
+    <h3 for="">Result</h3>
+    
+</body>
+</html>

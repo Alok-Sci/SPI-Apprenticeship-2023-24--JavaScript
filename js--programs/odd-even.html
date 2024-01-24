@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Odd Even in JS</title>
+        <script>
+            // check if a number is odd or even 
+            function oddEven() {
+                const num = document.getElementById('num').value;
+                // alert(num);
+                const outputBox = document.getElementById('output');
+
+                if (num % 2 == 0) {
+                    outputBox.value = num + ' is an Even number';
+                } else {
+                    outputBox.value = num + ' is an Odd number';
+                }
+            }
+
+            
+        </script>
+
+    </head>
+
+    <body>
+        <!-- ---number input-----  -->
+        <label for="">Enter first number</label>
+        <input type="number"
+               placeholder="first number"
+               id="first">
+        <br>
+        <label for="">Enter second number</label>
+        <input type="number"
+               placeholder="second number"
+               id="second">
+        <br>
+        <label for="">Enter third number</label>
+        <input type="number"
+               placeholder="third number"
+               id="third">
+        <br>
+        <!-- ----button-----  -->
+        <input type="button"
+               value="Check"
+               onclick="greatestNumAmongThree()">
+        <br>
+        <label for="">Result</label>
+        <input type="text"
+               id="output">
+
+    </body>
+
+</html>
